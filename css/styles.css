@@ -1,0 +1,135 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Mono", monospace;
+}
+
+.container{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/* ----------------------Header Section -------------------------- */
+header{
+  padding-top: 20px;
+  padding-bottom: 15px;
+  background-color: #CCAA87;
+}
+
+
+nav ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li{
+  font-weight: bold;
+  color: #fff;
+}
+
+nav ul li p{
+  padding-right: 200px;
+  font-weight: bold;
+  font-size: 40px;
+  color: #87A9CC;
+}
+
+nav ul li p span{
+  color: #fff;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+}
+
+nav ul li a::after{
+  content: '';
+  width: 0px;
+  height: 3px;
+  background: #87A9CC;
+  position: absolute;
+  top:18px;
+  left: -2px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+  width: 100%;
+}
+
+
+.hero{
+  display: flex;
+  justify-content: space-between;
+}
+
+h1{
+  color: #483129;
+  font-size: 56px;
+}
+
+h1 span{
+  color: #87A9CC;
+}
+
+.hero .header-col-2{
+  margin-top: 35px;
+}
+
+
+.hero .header-col-2 img{
+  width: 90%;
+  border-radius: 50%;
+  
+}
+
+.hero .header-col-1{
+  padding-top: 100px;
+  min-width: 50%;
+}
+
+.hero .header-col-1 p{
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  padding-right: 100px;
+  margin-top: 10px;
+}
+
+.hero .header-col-1 button{
+  width: 150px;
+  height: 60px;
+  margin-top:15px;
+  background-color: #C2C2FF;
+  color: #483129;
+  font-size: 20px;
+  border-radius: 38px;
+  border-style: none;
+  font-weight: 1000;
+}
+
+.hero .header-col-1 button:hover{
+  color: #C2C2FF;
+  background-color: #483129;
+  cursor: pointer;
+}
+
+/* ----------------------------------about------------------------------------------ */
+#about{
+  background-color: #C2C2FF;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.about-cols{
+  display: flex;
+}
+
+.about-col-1 img{
+  width: 95%;
+}
+
