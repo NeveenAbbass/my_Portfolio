@@ -141,6 +141,7 @@ h1 span{
   width: 95%;
   margin: 0;
   padding: 0px;
+  border-radius: 10px;
 }
 
 .about-col-2 h2{
@@ -303,3 +304,145 @@ h3{
 }
 
 /* ----------------------------------------Portfolio------------------------------------------------ */
+
+#portfolio{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color:#C2C2FF;
+  text-align: center;
+}
+
+#portfolio h2{
+  font-weight: bold;
+  color: #fff;
+  font-size: 45px;
+  padding-bottom: 30px;
+  margin-bottom: 25px;
+}
+
+.port-elements{
+  display: flex;
+  justify-content:space-between;
+}
+
+.port-card{
+position: relative;
+/* transition: 1s; */
+}
+
+.port-card img{
+  width: 250px;
+  height: 318px;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 1s ease-in ;
+}
+
+.port-card h4{
+  background-color: #483129a1;
+  color: #87A9CC;
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+}
+
+.port-card article{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 250px;
+  height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content:center;
+  border-radius: 20px;
+  transition: height 1s ease-in;
+  background: linear-gradient(90deg, rgba(72,49,41,0.4234068627450981) 0%, rgba(135,169,204,0.4009978991596639) 35%, rgba(204,170,135,0.4318102240896359) 100%);
+}
+
+.port-card article h5{
+  color:#fff;
+  font-size: 20px;
+  margin-bottom:10px ;
+}
+
+.port-card article p{
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.port-card article a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.port-card article a i{
+  background-color: #87A9CC;
+  padding: 10px;
+  border-radius: 50%;
+}
+.port-card:hover article{
+  height: 318px;
+  overflow: hidden;
+  transform: scale(1.1,1.1);
+}
+
+.port-card:hover img{
+  transform: scale(1.1,1.1);
+}
+
+/* -----------------------------------------------------contact---------------------------------------- */
+#Contact{
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url(/assets/pexels-cottonbro-studio-7504611.jpg);
+  background-position: center;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.contact-cols{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 60px;
+}
+
+.contact-col-1 h2{
+  font-weight: bold;
+  color: #CCAA87;
+  font-size: 60px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  padding-right: 50px;
+} 
+
+.contact-col-1 a{
+  display: block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.contact-col-1 a i{
+  color: #C2C2FF;
+  font-size: 40px;
+}
+
+.contact-content{
+  font-size: 20px;
+  color: #fff;
+  margin-bottom:50px;
+  font-weight: 600;
+}
+
+.contact-col-1 a[download]{
+  text-align: center;
+  background-color: #483129;
+  color: #87A9CC;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 40px;
+  width: 220px;
+  border-radius: 30px;
+}
