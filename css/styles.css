@@ -38,7 +38,7 @@ nav ul{
   position: relative;
   bottom: 50px;
   left: 60%;
-  height : 650px;
+  height : 600px;
   background-color: #483129;
   padding-left: 50px ;
   padding-top: 20px;
@@ -75,7 +75,7 @@ nav p span{
 .fa-bars{
   padding-top: 20px;
   position: relative;
-  left: 400px;
+  left: 350px;
   bottom: 50px;
 }
 
@@ -407,7 +407,6 @@ padding-top: 20px;
 .port-card article{
   position: absolute;
   top: 0px;
-  left: 230px;
   width: 250px;
   height: 0;
   display: flex;
@@ -523,7 +522,7 @@ padding-top: 20px;
   padding-left: 15px;
   font-size: 15px;
   margin-bottom: 15px;
-  width: 400px;
+  width: 280px;
   border-radius: 10px;
   font-weight: bold;
 } 
@@ -596,6 +595,10 @@ No media query since this is the default if you use "mobile first" */
 
   .services-items{
     grid-template-columns: repeat(2,2fr);
+  }
+
+  .contact-col-2 form input{
+    width: 400px;
   }
 
 }
