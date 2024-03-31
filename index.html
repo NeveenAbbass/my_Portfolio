@@ -9,20 +9,23 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/all.css">
     <title>Neveen's Portfolio</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
   </head>
 
   <body>
     <!-- ----------------------------header section-------------------------------->
     <nav>
       <div class="container">
-        <ul type="none">
-          <li><p>Neveen<span>'</span>s</p></li>
+        <p>Neveen<span>'</span>s</p>
+        <ul id="side-menu" type="none">
+          <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
           <li><a href="#hero"><em>Home</em></a></li>
           <li><a href="#about"><em>About</em></a></li>
           <li><a href="#services"><em>Services</em></a></li>
           <li><a href="#portfolio"><em>Portfolio</em></a></li>
-          <li><a href="#contact"><em>Contact</em></a></li>
+          <li><a href="#Contact"><em>Contact</em></a></li>
         </ul>
+        <i class="fa-solid fa-bars" onclick="openMenu()"></i>
       </div>
     </nav>
     <header>
@@ -31,7 +34,7 @@
           <div class="header-col-1">
             <h1>UI<span>/</span>UX<br> DESIGNER<br> <span>&</span>FRONT-END<br> WEB DEVELOPER</h1>
             <p><em>Hi There! I’m <span>Neveen</span>,and I focus on creating fun and engaging experience through my websites.</em></p>
-            <button>Hire Me</button>
+            <button><a href="#Contact">Hire Me</a></but>
           </div>
           <div class="header-col-2">
             <img src="assets/thirdman-copy.jpg" alt="">
@@ -95,19 +98,19 @@
             <i class="fa-solid fa-code"></i>
             <h3>Front-end Web Development</h3>
             <p>Developing websites using HTML, CSS, JavaScript and BootStrap.</p>
-            <a href="#contact">Request</a>
+            <a href="#Contact">Request</a>
           </div>
           <div class="card">
             <i class="fa-brands fa-figma"></i>
             <h3>UI/UX <br> Design</h3>
             <p>Conducting Case Studies for given projects, fulfilling the UX process.</p>
-            <a href="#contact">Request</a>
+            <a href="#Contact">Request</a>
           </div>
           <div class="card">
             <i class="fa-brands fa-app-store"></i>
             <h3>Mobile and Web App Design</h3>
             <p>Using Figma for sketching and Designing mockups and prototypes.</p>
-            <a href="#contact">Request</a>
+            <a href="#Contact">Request</a>
           </div>
         </div>
       </div>
@@ -160,7 +163,7 @@
           <div class="contact-col-1">
             <h2>Let's Get in Touch</h2>
             <p class="contact-content">
-              Contact me via e-mail and social<br> media or send me a message, and<br>I'll guarntee you'll never get a boring project!
+              Contact me via e-mail and social media<br> or send me a message, and I'll guarntee <br>you'll never get a boring project!
             </p>
             <a href="mailto:neveen.abbas555@gmail.com">
               <i class="fa-solid fa-envelope-open-text"></i>
@@ -175,34 +178,76 @@
             <a href="assets/Neveen Abbas Hassan.pdf" download="Neveen's Resmue">Download my CV</a>
           </div>
           <div class="contact-col-2">
-            <form action="">
+            <form name="submit-to-google-sheet">
               <input type="text" name="name" placeholder="your name">
               <input type="text" name="email" placeholder="your e-mail">
               <textarea name="message" id="#msg" cols="30" rows="10"></textarea>
+              <button type="submit">Submit</button>
+              <div id="msg"></div>
             </form>
           </div>
         </div>
       </div>
     </section>
+    <footer>
+      <p>Copyright&copy; 2024 Neveen's</p>
+    </footer>
+
+    <script>
+      var tabLinks = document.getElementsByClassName("tab-links");
+      var tabContents = document.getElementsByClassName("tab-contents")
+  
+        function openTab(tabName){
+  
+          for(let tabLink of tabLinks){
+            tabLink.classList.remove("active-link");
+          }
+  
+          for(let tabContet of tabContents){
+            tabContet.classList.remove("active-tab");
+          }
+  
+          event.currentTarget.classList.add("active-link");
+          document.getElementById(tabName).classList.add("active-tab");
+  
+    }
+    </script>
+  
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzGvIP9FiWP7hyotbi6awVRUgnF6ooS1ZmjmjyMYc0CLqIhUAM_7MbKH6WgJ-CAQwQK/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg");
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+  
+          msg.innerHTML = "I recieved your message. I'll get tou you so soon!"
+  
+          setTimeout(function(){
+            msg.innerHTML = ''
+          },6000)
+  
+          form.reset();
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  
+  <script>
+    let sideMenu = document.getElementById("side-menu");
+
+    function openMenu(){
+      sideMenu.style.display = "flex";
+    }
+
+    function closeMenu(){
+      sideMenu.style.display = "none";
+    }
+  </script>
+
   </body>
 
-  <script>
-    var tabLinks = document.getElementsByClassName("tab-links");
-    var tabContents = document.getElementsByClassName("tab-contents")
-
-      function openTab(tabName){
-
-        for(let tabLink of tabLinks){
-          tabLink.classList.remove("active-link");
-        }
-
-        for(let tabContet of tabContents){
-          tabContet.classList.remove("active-tab");
-        }
-
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabName).classList.add("active-tab");
-
-  }
-  </script>
+  
 </html>
